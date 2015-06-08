@@ -1,0 +1,131 @@
+<!DOCTYPE ui:UiBinder SYSTEM 
+"http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:style field="style">
+    
+        .container{
+            overflow:hidden;
+        }
+    
+        .title{
+            padding: 10px;
+            margin:auto;
+            height:60px;
+            width:100%;
+            color:#252524;
+        }
+        
+        .main-label{
+            font-size:32px;
+            font-weight:bold;
+        }
+
+        
+        .name-label{
+            font-weight:bold;
+        }
+        
+        .powered-label{
+            font-weight:bold;
+        }
+        
+        .user-bar{
+            font-size:13px;
+            padding:2px;
+            border:none;
+        }
+        
+        .user-bar button{
+            padding:1px;
+            font-size:12px;
+        }
+
+        .logo-img{
+            margin-left:8px;
+        }
+
+        
+    </ui:style>
+    <ui:with field="res"
+        type="sk.lkcm.organizer.client.Resources" />
+
+    <g:VerticalPanel>
+        <!-- The row about header with the "powered by" stuff -->
+        <g:HorizontalPanel>
+            <g:cell width="810px">
+                <g:Label text="" />
+            </g:cell>
+            <g:cell width="90px">
+                <g:Label text="Powered by" styleName="{style.powered-label}" />
+            </g:cell>
+            <g:cell  horizontalAlignment="ALIGN_CENTER">
+                <g:HTMLPanel styleName="{style.logo-img}">
+                    <a href="https://www.openshift.com/" target="_blank" >
+                        <img src="img/openshift_logo.png"/>
+                    </a>
+                </g:HTMLPanel>
+            </g:cell>
+            <g:cell  horizontalAlignment="ALIGN_CENTER">
+                <g:HTMLPanel styleName="{style.logo-img}">
+                    <a href="http://www.gwtproject.org/" target="_blank">
+                        <img src="img/gwt_logo.png"/>
+                    </a>
+                </g:HTMLPanel>
+            </g:cell>
+            <g:cell horizontalAlignment="ALIGN_CENTER">
+                <g:HTMLPanel styleName="{style.logo-img}" >
+                    <a href="http://spring.io/"  target="_blank">
+                        <img src="img/logo-spring.png"  />
+                    </a>
+                </g:HTMLPanel>
+            </g:cell>
+        </g:HorizontalPanel>
+
+        <!-- The actual header -->
+        <g:VerticalPanel
+            styleName="{style.container} {res.css.rounded} {res.css.bordered}">
+            <!--  Because of FCKIN IE it needs to be top rounded as for some reason overflow:hidden and rounded on parent
+                is not sufficient -->
+            <g:HorizontalPanel ui:field="panel "
+                styleName="{style.title} {res.css.title} {res.css.roundedTop}" width="1000px">
+
+                <g:cell width="7%" horizontalAlignment="ALIGN_CENTER"
+                    verticalAlignment="ALIGN_BOTTOM">
+                    <g:Image url="img/organizer2.png" pixelSize="40, 40" />
+                </g:cell>
+                <g:cell width="2%" horizontalAlignment="ALIGN_CENTER"
+                    verticalAlignment="ALIGN_BOTTOM">
+                    <g:Label text="" />
+                </g:cell>
+                <g:cell width="93%" verticalAlignment="ALIGN_BOTTOM">
+                    <g:Label text="EasyOrganizer" styleName="{style.main-label}" />
+                </g:cell>
+            </g:HorizontalPanel>
+
+            <!-- Same as in previous case but rounded at bottom is needed -->
+            <g:HorizontalPanel width="100%"
+                styleName="{res.css.mainBcg} {style.user-bar} {res.css.roundedBottom}">
+                <g:cell width="70%" verticalAlignment="ALIGN_MIDDLE"
+                    horizontalAlignment="ALIGN_RIGHT">
+                    <g:Label />
+                </g:cell>
+                <g:cell verticalAlignment="ALIGN_MIDDLE" horizontalAlignment="ALIGN_RIGHT">
+                    <g:Label ui:field="userNameLabel" styleName="{style.name-label}" />
+                </g:cell>
+                <g:cell width="10px">
+                    <g:Label />
+                </g:cell>
+                <g:cell width="30px" verticalAlignment="ALIGN_MIDDLE"
+                    horizontalAlignment="ALIGN_LEFT">
+                    <g:Button ui:field="logOutButton" text="Logout" />
+                </g:cell>
+
+                <g:cell width="30px">
+                    <g:Label />
+                </g:cell>
+            </g:HorizontalPanel>
+        </g:VerticalPanel> <!-- end of header -->
+    </g:VerticalPanel>
+</ui:UiBinder>

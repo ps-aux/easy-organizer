@@ -1,0 +1,31 @@
+<!DOCTYPE ui:UiBinder SYSTEM 
+"http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:tr="urn:import:com.tractionsoftware.gwt.user.client.ui"
+    xmlns:dp="urn:import:com.google.gwt.user.datepicker.client">
+
+    <ui:style field="style">
+        .button{
+        }
+        
+        .label{
+            padding-bottom:10px;
+        }
+        
+        .container{
+            padding:5px;
+        }
+
+    </ui:style>
+
+    <ui:with field="res"
+        type="sk.lkcm.organizer.client.Resources" />
+
+    <g:VerticalPanel styleName="{style.container}" >
+        <g:Label ui:field="label" styleName="{style.label}" />
+        <g:cell  horizontalAlignment="ALIGN_CENTER"
+            verticalAlignment="ALIGN_MIDDLE">
+            <g:Button text="Ok" ui:field="buttonOk" addStyleNames="{style.button}" />
+        </g:cell>
+    </g:VerticalPanel>
+</ui:UiBinder>

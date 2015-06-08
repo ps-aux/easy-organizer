@@ -1,0 +1,94 @@
+<!DOCTYPE ui:UiBinder SYSTEM 
+"http://dl.google.com/gwt/DTD/xhtml.ent"> 
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+<ui:style field="style">
+    
+    .organizer-entry {
+        border:solid 1px #C6C6C6;
+        border:none;
+        margin:3px;
+        cursor:default;
+        overflow:hidden;
+    }
+    
+    div.organizer-entry.beingEdited{
+        border:solid 1px black;
+        color:black;
+    }
+    
+    .entry-header > .gwt-Label{
+        display:inline-block;
+        margin-right:5px;
+    }
+    
+    .entry-header{
+       background: #F0F0F0;
+       background:rgb(240,240,240);
+       background:rgba(240,240,240,0.6);
+       border-bottom: dashed 1px #E2E2E2;
+       padding-bottom:1px;
+       padding-left:4px;
+       height:22px;
+    }
+    
+
+    button.remove-icon-button{
+        padding:1px;
+        background-image: url('img/event_remove.png');
+        background-size:8px 8px;
+        background-repeat:  no-repeat;
+        background-position:center; 
+    }
+
+    button.edit-icon-button{
+        padding:1px;
+        background-image: url('img/event_edit.png');
+        background-size:8px 8px;
+        background-repeat:  no-repeat;
+        background-position:center; 
+    }
+    
+    .label{
+        font-size:11px;
+        font-weight:bold;
+        height:14px;
+    }
+    
+    .entry-body{
+        padding:3px;
+        font-size:13px;
+    }
+    
+    .event-text{
+        word-wrap:break-word;
+    }
+    
+}
+    
+</ui:style>
+    <ui:with field="res"
+        type="sk.lkcm.organizer.client.Resources" />
+
+    <g:HTMLPanel styleName="{style.organizer-entry} {res.css.rounded}" width="120px">
+        <g:HorizontalPanel styleName="{style.entry-header}" width="100%"
+        horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_MIDDLE">
+            <g:cell width = "74%" verticalAlignment="ALIGN_BOTTOM">
+                <g:Label ui:field="time" addStyleNames="{style.label}" />
+            </g:cell>
+            <g:cell width="13%">
+                <g:Button title="Edit this event" ui:field="buttonEdit" 
+                    addStyleNames="{style.edit-icon-button}" width="14px" height="14px"/>
+            </g:cell>
+            <g:cell width="13%">
+                <g:Button title="Remove this event" ui:field="buttonRemove"
+                     addStyleNames="{style.remove-icon-button}" width="14px" height="14px"/>
+            </g:cell>
+        </g:HorizontalPanel>
+        <div class="{style.entry-body} {res.css.eventBcg}">
+            <g:Label ui:field="text"  addStyleNames="{style.event-text}" />
+        </div>    
+    </g:HTMLPanel>
+
+</ui:UiBinder>

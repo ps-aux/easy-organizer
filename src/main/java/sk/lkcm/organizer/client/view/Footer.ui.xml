@@ -1,0 +1,27 @@
+<!DOCTYPE ui:UiBinder SYSTEM 
+"http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:style field="style">
+    .container{
+        padding:5px;
+    }
+    
+    .by-label{
+        font-weight:bold;
+    }
+                
+    </ui:style>
+        <g:HorizontalPanel styleName="{style.container}" >
+            <g:cell width="850px" horizontalAlignment="ALIGN_RIGHT">
+                <g:Label text="" styleName="by-label"/>
+            </g:cell>
+            <g:cell width="80px" horizontalAlignment="ALIGN_RIGHT">
+                <g:Label text="2014 LC" styleName="{style.by-label}"/>
+            </g:cell>
+            <g:cell width="50px" horizontalAlignment="ALIGN_RIGHT">
+                <g:Anchor text="lkce.sk" href="."/>
+            </g:cell>
+        </g:HorizontalPanel>
+</ui:UiBinder>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='Organizer'>
+
+    <inherits name='com.google.gwt.user.User' />
+    <inherits name='com.google.gwt.user.theme.clean.Clean' />
+    <inherits name="com.summatech.gwt.GwtTimepicker" />
+    <inherits name="com.tractionsoftware.gwt.user.UTCDateTime" />
+    <inherits name="com.google.gwt.resources.Resources" />
+
+    <entry-point class='sk.lkcm.organizer.client.OrganizerApp' />
+    <stylesheet src="Organizer.css" />
+
+    
+    <source path='client' />
+    <source path='shared' />
+    
+    <extend-property name="locale" values="us" />
+    <set-property name="locale" value="us" />
+
+</module>

@@ -1,0 +1,159 @@
+#main{
+     margin: auto;
+    margin-top: 50px;
+    width: 1000px;
+}
+
+
+input {
+    border: solid 1px #C8C8CA;
+}
+
+
+/* Customization of timebox */
+
+input.gwt-TimeBox{
+    font-size:1em;
+    width:3em;
+}
+
+input.dateBoxFormatError{
+    background:pink;
+    color:red;
+}
+
+input.gwt-TimeBox.invalid{
+    background:pink;
+    color:red;
+}
+
+
+/*Prevent borders around link images in IE */
+a img{
+    border:none;
+}
+
+/* Date picker customization */
+.day-date-picker{
+    border: solid 3px #C8C8CA;
+    border-radius:3px;
+    overflow:hidden;
+}
+
+.day-date-picker .datePickerDay {
+    font-size:0.75em;
+}
+
+
+
+/*Custom global styles */
+div.gwt-PopupPanel{
+    border: solid 3px #C8C8CA;
+    border-radius:3px;
+    padding:0px;
+    
+}
+
+
+
+a.pressed-menu-item{
+    color: rgb(196, 79, 71);
+    text-decoration:underline;
+}
+
+a.pressed-menu-item:hover{
+    color: rgb(196, 79, 71);
+    text-decoration:underline;
+}
+
+
+
+/*Custom widget styles */
+
+div.dialogTopCenterInner  .app-dialog-title{
+    padding-bottom:1px;
+    width:100%;
+}
+
+
+/* Custom gwt styling */
+
+.gwt-TimeBox-menu a{
+    font-size:0.9em;
+}
+
+.gwt-DialogBox{
+  border-top:none;
+
+}
+
+tr.dialogBottom{
+  display:none;
+}
+
+td.dialogMiddleLeft{
+  display:none;
+}
+
+td.dialogTopLeft{
+  display:none;
+}
+
+td.dialogMiddleRight{
+  display:none;
+}
+
+td.dialogTopRight{
+  display:none;
+}
+
+.gwt-DialogBox td.dialogMiddleCenter{
+     background:rgb(255,255,255);
+     background:rgba(255,255,255,0.9);
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+}
+
+div.dialogTopCenterInner .Caption{
+    background: rgb(174, 212, 139);
+    background: rgba(174, 212, 139, 0.9);
+}
+
+
+.gwt-DialogBox td.dialogTopCenter {
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+}
+
+
+/*Firefox takes colors from widget style colors (e.g. Application appearance settings in KDE)*/
+button.gwt-Button{
+    color:black;
+    background:rgb(220,220,220);
+    background:rgba(220,220,220,0.8);
+    border:none;
+}
+
+button.gwt-Button:hover:disabled{
+    border:none;
+}
+
+button.gwt-Button:hover {
+    background-color:rgb(200,200,200);
+    background-color:rgba(200,200,200,0.8);
+}
+
+button.gwt-Button:active {
+    border:none;
+}
+
+/*IE fix*/
+textarea{
+    overflow:auto;
+}
+
+/*IE fix*/
+.gwt-CheckBox input{
+    border:none;
+}
+

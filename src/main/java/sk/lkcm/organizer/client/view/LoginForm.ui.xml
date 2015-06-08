@@ -1,0 +1,77 @@
+<!DOCTYPE ui:UiBinder SYSTEM 
+"http://dl.google.com/gwt/DTD/xhtml.ent"> 
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+xmlns:g="urn:import:com.google.gwt.user.client.ui"
+>
+
+<ui:style field="style">
+    .container{    
+        margin:auto;
+        margin-top:50px;
+        overflow:hidden;
+    }
+    
+    
+    .title{
+        height:23px;
+        line-height:23px;
+        padding-left:5px;
+        margin-bottom:10px;
+    }
+    
+    .inner{
+
+    }
+    
+    .panel{
+        padding-left:3px;
+    }
+    
+    .button-pane{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    
+    .input{
+        width:160px;
+        background:white;
+        background:rgb(255,255,255);
+        background:rgba(255,255,255,0.6);
+        border-radius:2px;
+    }
+    
+    
+</ui:style>
+<ui:with field="res" type="sk.lkcm.organizer.client.Resources"/>
+
+    <g:VerticalPanel addStyleNames="{style.container} {res.css.mainBcg} {res.css.rounded}" 
+    horizontalAlignment="ALIGN_LEFT" verticalAlignment="ALIGN_MIDDLE"
+     width="200px">
+        <g:cell>
+            <!--  Because of FCKIN IE it needs to be top rounded as for some reason overflow:hidden and rounded on parent
+            is not sufficient -->
+            <g:Label text="Login required" styleName="{style.title} {res.css.title} {res.css.roundedTop}"/>
+        </g:cell>
+        
+        <g:cell horizontalAlignment="ALIGN_CENTER"> 
+            <g:VerticalPanel addStyleNames="{style.inner}" horizontalAlignment="ALIGN_LEFT"> 
+                <g:Label text="Username"   />
+                <g:TextBox ui:field="inputName" addStyleNames="{style.input} {res.css.mainBcg}" />
+                <g:Label text="Password" />
+                <g:PasswordTextBox ui:field="inputPassword" addStyleNames="{style.input} {res.css.mainBcg}" />
+            </g:VerticalPanel>
+        </g:cell>
+        
+        <g:cell horizontalAlignment="ALIGN_CENTER">
+            <g:HorizontalPanel styleName="{style.button-pane}" horizontalAlignment="ALIGN_CENTER">
+                <g:cell width="80px">
+                    <g:Button text="Log in" ui:field="buttonLogIn"/>
+                </g:cell>
+                <g:cell >
+                    <g:Button text="Try demo" ui:field="demoButton"/>
+                </g:cell>
+            </g:HorizontalPanel>
+        </g:cell>
+    </g:VerticalPanel>
+
+</ui:UiBinder>

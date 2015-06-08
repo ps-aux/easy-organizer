@@ -1,0 +1,124 @@
+<!DOCTYPE ui:UiBinder SYSTEM 
+"http://dl.google.com/gwt/DTD/xhtml.ent"> 
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+xmlns:g="urn:import:com.google.gwt.user.client.ui"
+xmlns:tr="urn:import:com.tractionsoftware.gwt.user.client.ui"
+ xmlns:dp="urn:import:com.google.gwt.user.datepicker.client"
+>
+
+<ui:style field="style">
+
+    .entry-input{
+         padding:10px;
+         padding-left:30px;
+         padding-right:30px;
+         padding-bottom:3px;
+    }
+
+    .row{
+        margin-bottom:5px;
+        font-size:12px;
+    }
+    
+    .entry-input textarea.txt-box-desc{
+        width:170px;;
+        height:40px;
+        border: solid 1px #C8C8CA;
+        resize: none;
+        margin:0px;
+    }
+
+    .row button{
+        font-size:12px;
+        padding:5px;
+        width:50px;
+        margin-right:5px;
+    }
+
+    .row.button-panel{
+    }
+    
+    .errorMsg{
+        font-weight:bold;
+        color:red;
+        height:15px;
+        width:170px;
+        padding-top:5px;
+        width:170px;
+
+    }
+    
+    .date-box{
+        width:90px;
+        height:10px;
+        border: solid 1px #C8C8CA;
+        font-size:12px;
+        /* Both for better displaying in IE*/
+        padding:0px;
+        height:15px;
+        line-height:15px;
+    }
+        
+    .timeBox{
+        border: solid 1px #C8C8CA;
+        border-radius: 4px;
+        overflow:hidden;
+    }
+    
+    .separator{
+        display:inline;
+    }
+    
+    .bold{
+        font-weight:bold;
+    }
+    
+    .timeBox{
+        margin:none;
+    }
+    
+    .marginBot{
+        margin-bottom:3px;
+    }
+        
+</ui:style>
+
+    <ui:with field="res"
+        type="sk.lkcm.organizer.client.Resources" />
+
+    <g:HTMLPanel>
+        <g:VerticalPanel styleName="{style.entry-input}">
+            <g:HTMLPanel styleName="{style.row}">
+                <g:Label text="Description" styleName="{style.bold} {style.marginBot}" />
+                <g:TextArea ui:field="txtAreaDescription"
+                    styleName="{style.txt-box-desc} {res.css.rounded}" />
+            </g:HTMLPanel>
+            <g:HTMLPanel styleName="{style.row}">
+                <g:Label text="Day" styleName="{style.bold} {style.marginBot}" />
+                <dp:DateBox ui:field="dateBox" addStyleNames="{style.date-box} {res.css.rounded}" />
+            </g:HTMLPanel>
+            <g:HTMLPanel styleName="{style.row}">
+                <g:Label text="Time" styleName="{style.bold}" />
+                <g:HorizontalPanel verticalAlignment="ALIGN_BOTTOM"
+                    height="20px">
+                    <tr:UTCTimeBox ui:field="timeBoxFrom"
+                        addStyleNames="{res.css.rounded} {style.timeBox}" />
+                    <g:cell verticalAlignment="ALIGN_MIDDLE" horizontalAlignment="ALIGN_CENTER"  
+                        width="10px">
+                        <g:Label text="-" styleName="{style.separator}" ui:field="lblSeparator" />
+                    </g:cell>
+                    <tr:UTCTimeBox ui:field="timeBoxTo"
+                        addStyleNames="{res.css.rounded} {style.timeBox}" />
+                    <g:CheckBox ui:field="chBoxStartOnly" text="Start only" />
+                </g:HorizontalPanel>
+                <g:Label ui:field="lblError" styleName="{style.errorMsg}" />
+            </g:HTMLPanel>
+            <g:cell horizontalAlignment="ALIGN_CENTER" verticalAlignment="ALIGN_MIDDLE">
+                <g:HTMLPanel styleName="{style.row} {style.button-panel}">
+                    <g:Button text="Ok" ui:field="buttonOk" />
+                    <g:Button text="Cancel" ui:field="buttonCancel" />
+                </g:HTMLPanel>
+            </g:cell>
+        </g:VerticalPanel>
+    </g:HTMLPanel> 
+</ui:UiBinder>
