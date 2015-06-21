@@ -24,16 +24,6 @@
 
     <bean
         class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
-    <bean
-        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix">
-            <value>/WEB-INF/pages/</value>
-        </property>
-        <property name="suffix">
-            <value>.jsp</value>
-        </property>
-    </bean>
-
     <!-- persistance layer part -->
 
     <jee:jndi-lookup id="dataSource" jndi-name="/jdbc/mysqldb"
@@ -57,22 +47,6 @@
                 class="sk.lkcm.organizer.server.service.OrganizerServiceImpl" />
         </entry>
     </util:map>
-
-
-    <!-- Configure to plugin JSON as request and response in method handler -->
-    <bean
-        class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="messageConverters">
-            <list>
-                <ref bean="jsonMessageConverter" />
-            </list>
-        </property>
-    </bean>
-
-    <!-- Configure bean to convert JSON to POJO and vice versa -->
-    <bean id="jsonMessageConverter"
-        class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-    </bean>
 
 
 </beans>

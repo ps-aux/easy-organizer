@@ -93,7 +93,7 @@
 
                 <g:cell width="7%" horizontalAlignment="ALIGN_CENTER"
                     verticalAlignment="ALIGN_BOTTOM">
-                    <g:Image url="img/organizer2.png" pixelSize="40, 40" />
+                    <g:Image url="img/organizer_logo.png" pixelSize="40, 40" />
                 </g:cell>
                 <g:cell width="2%" horizontalAlignment="ALIGN_CENTER"
                     verticalAlignment="ALIGN_BOTTOM">

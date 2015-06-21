@@ -21,7 +21,7 @@
                 <g:Label text="2014 LC" styleName="{style.by-label}"/>
             </g:cell>
             <g:cell width="50px" horizontalAlignment="ALIGN_RIGHT">
-                <g:Anchor text="lkce.sk" href="."/>
+                <g:Anchor text="lkcm.sk" href=".."/>
             </g:cell>
         </g:HorizontalPanel>
 </ui:UiBinder>
