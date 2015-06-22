@@ -1,3 +1,4 @@
-TODO:
+# easy-organizer
 
-- periodical temporary demo user deletion (those who did not log out)
+## TODO
+- periodical temp demo-user deletion (those who did not log out)
